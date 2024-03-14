@@ -1,0 +1,23 @@
+{
+  "name": "ethers-simple-test",
+  "version": "0.0.1",
+  "description": "ethers simple test for read and writing msg",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://cv.lwa7.com",
+  "repository": {
+    "url":""
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": ["ethers","test","ethers-simple-test"],
+  "author": "AboIbrahemSy",
+  "license": "MTL",
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2",
+    "ethers": "^5.6.1"
+  }
+}
