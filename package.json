@@ -7,7 +7,7 @@
   "types": "./dist/index.d.ts",
   "homepage": "https://cv.lwa7.com",
   "repository": {
-    "url":""
+    "url":"https://github.com/AboIbrahemSy/ethers-simple-test"
   },
   "scripts": {
     "build": "tsup"
