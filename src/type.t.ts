@@ -5,6 +5,14 @@ interface StateType{
     signer:ethers.providers.JsonRpcSigner | null;
     contract:ethers.Contract;
 }
+
+interface StateTypeFun{
+  provider: ethers.providers.Web3Provider | null;
+  signer:ethers.providers.JsonRpcSigner | null;
+  contract:ethers.Contract | null | any;
+  account:string;
+}
+
 interface MemosType{
     name:string;
     timestamp:number;
@@ -12,4 +20,4 @@ interface MemosType{
     from:string;
   }
 
-export type {StateType,MemosType}
+export type {StateType,MemosType,StateTypeFun}

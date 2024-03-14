@@ -1,5 +1,5 @@
 import {ethers} from "ethers"
-import { StateType } from "./type.t";
+import { MemosType, StateType ,StateTypeFun } from "./type.t";
 
 declare global {
     interface Window {
@@ -7,7 +7,7 @@ declare global {
     }
   }
 
-const ethersSimpleTestStarting = async ({contractAddres,contractABI}:{contractAddres:string,contractABI:any}) => {
+const ethersSimpleTestStarting = async ({contractAddres,contractABI}:{contractAddres:string,contractABI:any}): Promise<StateTypeFun> => {
     try{
         const {ethereum}=window;
         const account = await ethereum.request({
@@ -26,7 +26,7 @@ const ethersSimpleTestStarting = async ({contractAddres,contractABI}:{contractAd
         return {provider,signer,contract,account}
       }catch(error){
         console.log(error)
-        return false
+        return {provider:null,signer:null,contract:null,account:''}
       }
 }
 
@@ -46,16 +46,15 @@ const sendMessage =  async ({state,name,message,amountVal}:{state:StateType;name
 }
 
 
-const memosMessage = async({state}:{state:StateType;})=>{
+const memosMessage = async({state}:{state:StateType;}): Promise<MemosType[]>=>{
     try {
         const {contract}=state;
         const memos = await contract.getMemos();
-        return memos
+        return memos 
     } catch (error) {
         console.log(error)
-        return false
+        return []
     }
 }
 
-export default ethersSimpleTestStarting
-export {memosMessage,sendMessage}
+export {ethersSimpleTestStarting,memosMessage,sendMessage}

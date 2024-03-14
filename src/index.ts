@@ -1,3 +1,3 @@
 export * from './function'
 
-export type * from './type.t'
+export * from './type.t'
